@@ -1,0 +1,12 @@
+{% block stapling_rule_label %}{% endblock %}
+{% block stapling_rule_widget %}
+  <div
+    class="row mb-1"
+    {{ attr|map((value, key) => "#{key}=#{value}")|join(" ") }}
+  >
+    <div class="col">{{ form_widget(form.glueOperator) }}</div>
+    <div class="col">{{ form_widget(form.metadata) }}</div>
+    <div class="col">{{ form_widget(form.comparisonOperator) }}</div>
+    <div class="col">{{ form_widget(form.value) }}</div>
+  </div>
+{% endblock %}

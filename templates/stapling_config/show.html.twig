@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StaplingConfig{% endblock %}
+
+{% block body %}
+  <h1>StaplingConfig</h1>
+
+  <table class="table">
+    <tbody>
+    <tr>
+      <th>Id</th>
+      <td>{{ stapling_config.id }}</td>
+    </tr>
+    <tr>
+      <th>Slug</th>
+      <td>{{ stapling_config.slug }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <a
+    class="btn btn-secondary"
+    href="{{ path('app_stapling_config_index') }}"
+  >Back to list</a>
+  <a
+    class="btn btn-primary"
+    href="{{ path('app_stapling_config_edit', {'id': stapling_config.id}) }}"
+  >edit</a>
+
+  {{ include('stapling_config/_delete_form.html.twig') }}
+{% endblock %}

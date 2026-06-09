@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <pre>{{ query }}</pre>
+  <a class="btn btn-primary" href="{{ url('app_stapling_config_edit', {'id': stapling_config.id}) }}">Edit</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit StaplingConfig{% endblock %}
+
+{% block body %}
+  <h1>Edit StaplingConfig</h1>
+
+  {{ include('stapling_config/_form.html.twig', {'button_label': 'Update'}) }}
+
+  {{ include('stapling_config/_delete_form.html.twig') }}
+
+  <a
+    class="btn btn-secondary"
+    href="{{ path('app_stapling_config_index') }}"
+  >Back to list</a>
+  <a
+    class="btn btn-warning"
+    href="{{ path('app_stapling_config_generate_query', {'id': stapling_config.id}) }}"
+  >Generate query</a>
+{% endblock %}

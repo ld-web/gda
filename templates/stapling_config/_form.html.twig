@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+  {{ form_row(form.slug) }}
+
+  {% set formCollectionController = 'form-collection' %}
+  <div
+    class="mb-3"
+    data-controller="{{ formCollectionController }}"
+    data-{{ formCollectionController }}-index-value="{{ form.rules|length > 0 ? form.rules|last.vars.name + 1 : 0 }}"
+    data-{{ formCollectionController }}-prototype-value="{{ form_widget(form.rules.vars.prototype)|e('html_attr') }}"
+  >
+    <h4>Rules</h4>
+    <div
+      data-{{ formCollectionController }}-target="collectionContainer"
+    >
+      {% for rule in form.rules %}
+        {{ form_widget(rule) }}
+      {% endfor %}
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-action="click->{{ formCollectionController }}#addCollectionElement"
+    >+
+    </button>
+  </div>
+
+  <button
+    class="btn btn-success"
+  >{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

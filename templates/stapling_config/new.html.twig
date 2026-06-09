@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New StaplingConfig{% endblock %}
+
+{% block body %}
+  <h1>Create new StaplingConfig</h1>
+
+  {{ include('stapling_config/_form.html.twig') }}
+
+  <a
+    class="btn btn-secondary"
+    href="{{ path('app_stapling_config_index') }}"
+  >Back to list</a>
+{% endblock %}
