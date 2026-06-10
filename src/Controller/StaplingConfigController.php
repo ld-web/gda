@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\StaplingConfig;
 use App\Form\StaplingConfigType;
 use App\QueryGenerator\StaplingConfigQueryGenerator;
-use App\Repository\StaplingConfigRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -89,7 +88,7 @@ final class StaplingConfigController extends AbstractController
     }
 
     #[Route('/{id}/generate-query', name: 'app_stapling_config_generate_query', methods: ['GET'])]
-    public function generateQuery(Request $request, StaplingConfig $staplingConfig): Response
+    public function generateQuery(StaplingConfig $staplingConfig): Response
     {
         $query = $this->staplingConfigQueryGenerator->generate($staplingConfig);
 
