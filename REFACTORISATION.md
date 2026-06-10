@@ -62,9 +62,9 @@ J'ai rajouté une classe de tests pour les règles optionnelles et la classe `Si
 
 ### Contrôleurs, formulaires & vues
 
-Au niveau des formulaires, on définit une classe de base `AbstractRuleType` qui reprend les champs de base, à présent communs à `Strapling` et `Sign`.
+Au niveau des formulaires, on définit une classe de base `AbstractRuleType` qui reprend les champs de base, à présent communs à `Stapling` et `Sign`.
 
-Pour les contrôleurs, on utilise `make:crud`, qui semble avoir été utilisé initialement pour le `StraplingConfigController`, et on applique la même logique et les mêmes templates. La grosse différence, bien sûr, c'est l'utilisation du service `SignConfigQueryGenerator` à la place de `StraplingConfigQueryGenerator`.
+Pour les contrôleurs, on utilise `make:crud`, qui semble avoir été utilisé initialement pour le `StaplingConfigController`, et on applique la même logique et les mêmes templates. La grosse différence, bien sûr, c'est l'utilisation du service `SignConfigQueryGenerator` à la place de `StaplingConfigQueryGenerator`.
 
 ## Observations finales
 
