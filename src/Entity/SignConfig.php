@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\StaplingConfigRepository;
+use App\Repository\SignConfigRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: StaplingConfigRepository::class)]
-class StaplingConfig
+#[ORM\Entity(repositoryClass: SignConfigRepository::class)]
+class SignConfig
 {
     use EntityIdTrait;
 
@@ -16,9 +16,9 @@ class StaplingConfig
     private ?string $slug = null;
 
     /**
-     * @var Collection<int, StaplingRule>
+     * @var Collection<int, SignRule>
      */
-    #[ORM\OneToMany(targetEntity: StaplingRule::class, mappedBy: 'staplingConfig', cascade: ['persist', 'remove'], orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: SignRule::class, mappedBy: 'signConfig', cascade: ['persist', 'remove'], orphanRemoval: true)]
     private Collection $rules;
 
     public function __construct()
@@ -39,29 +39,29 @@ class StaplingConfig
     }
 
     /**
-     * @return Collection<int, StaplingRule>
+     * @return Collection<int, SignRule>
      */
     public function getRules(): Collection
     {
         return $this->rules;
     }
 
-    public function addRule(StaplingRule $rule): static
+    public function addRule(SignRule $rule): static
     {
         if (!$this->rules->contains($rule)) {
             $this->rules->add($rule);
-            $rule->setStaplingConfig($this);
+            $rule->setSignConfig($this);
         }
 
         return $this;
     }
 
-    public function removeRule(StaplingRule $rule): static
+    public function removeRule(SignRule $rule): static
     {
         if ($this->rules->removeElement($rule)) {
             // set the owning side to null (unless already changed)
-            if ($rule->getStaplingConfig() === $this) {
-                $rule->setStaplingConfig(null);
+            if ($rule->getSignConfig() === $this) {
+                $rule->setSignConfig(null);
             }
         }
 
