@@ -34,3 +34,5 @@
 ###< symfony/asset-mapper ###
 
 /coverage/
+
+.editorconfig
