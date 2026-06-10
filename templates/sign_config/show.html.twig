@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SignConfig
+{% endblock %}
+
+{% block body %}
+	<h1>SignConfig</h1>
+
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ sign_config.id }}</td>
+			</tr>
+			<tr>
+				<th>Slug</th>
+				<td>{{ sign_config.slug }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<a class="btn btn-secondary" href="{{ path('app_sign_config_index') }}">back to list</a>
+
+	<a class="btn btn-primary" href="{{ path('app_sign_config_edit', {'id': sign_config.id}) }}">edit</a>
+
+	{{ include('sign_config/_delete_form.html.twig') }}
+{% endblock %}

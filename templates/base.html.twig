@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Test IDX{% endblock %}</title>
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Test IDX
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a href="{{path('app_stapling_config_index')}}">Stapling Config</a>
+			</li>
+			<li>
+				<a href="{{path('app_sign_config_index')}}">Sign Config</a>
+			</li>
+		</ul>
+		{% block body %}{% endblock %}
+	</body>
 </html>

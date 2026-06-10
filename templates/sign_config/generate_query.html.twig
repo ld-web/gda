@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<pre>{{ query }}</pre>
+	<a class="btn btn-primary" href="{{ url('app_sign_config_edit', {'id': sign_config.id}) }}">Edit</a>
+{% endblock %}

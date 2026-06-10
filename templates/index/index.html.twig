@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Test IDX{% endblock %}
+{% block title %}Test IDX
+{% endblock %}
 
 {% block body %}
-<h1>Entites :</h1>
-<ul>
-  <li>
-    <a href="{{ path('app_stapling_config_index') }}">Stapling Config</a>
-  </li>
-</ul>
+	<h1>Entites :</h1>
+	<ul>
+		<li><a href="{{path('app_stapling_config_index')}}">Stapling Config</a></li>
+		<li><a href="{{path('app_sign_config_index')}}">Sign Config</a></li>
+	</ul>
 {% endblock %}
