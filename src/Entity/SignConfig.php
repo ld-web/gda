@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SignConfigRepository::class)]
-class SignConfig
+class SignConfig implements ConfigInterface
 {
     use EntityIdTrait;
 
